@@ -3,8 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const catData = require('./scratch-data/catdata');
-const dogData = require('./scratch-data/dogdata');
+const apiRouter = require('./routes/api-router');
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
 // const { dbConnect } = require('./db-mongoose');
@@ -24,13 +23,8 @@ app.use(
   })
 );
 
-app.get('/api/cat', (req, res, next) => {
-  res.json(catData);
-});
+app.use('/api', apiRouter);
 
-app.get('/api/dog', (req, res, next) => {
-  res.json(dogData);
-});
 
 function runServer(port = PORT) {
   const server = app
