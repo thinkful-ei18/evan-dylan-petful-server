@@ -13,9 +13,14 @@ const store = {
     return catData[0];
   },
   deleteDog: function() {
+    let temp = this.dogData[0];
+    this.dogData.push(temp);
     this.dogData.splice(0,1);
+    
   },
   deleteCat: function() {
+    let temp = this.catData[0];
+    this.catData.push(temp);
     this.catData.splice(0,1);
   }
 };
