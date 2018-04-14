@@ -54,18 +54,18 @@ const store = {
   catData: catQueue,
   dogData: dogQueue,
   getDog: function() {
-    return this.dogQueue.head.value;
+    return dogQueue.head.value;
   },
   getCat: function() {
-    return this.catQueue.head.value;
+    return catQueue.head.value;
   },
   deleteDog: function() {
-    let temp = this.dogQueue.dequeue();
-    this.dogQueue.enqueue(temp);
+    let temp = dogQueue.dequeue();
+    dogQueue.enqueue(temp);
   },
   deleteCat: function() {
-    let temp = this.catQueue.dequeue();
-    this.catQueue.enqueue(temp);
+    let temp = catQueue.dequeue();
+    catQueue.enqueue(temp);
   }
 };
 
